@@ -178,9 +178,22 @@ __________
 
    `sudo mount /dev/webdata-vg/apps-lv /mnt/apps`
  
-* Mount lv-logs on /mnt/logs – To be used by webserver logs. 
+   * Use `rsync` utility to back up all the files in the log directory /var/log into /mnt/logs (This is required before mounting the file system). Type
+
+     `sudo rsync -av /var/log/. /mnt/logs/`
+
+     ![rsync](./images/rsync.png)
+
+* Mount /var/log on logs-lv logical volume. – To be used by webserver logs.  (Note that all the existing data on /var/log will be deleted. This is why the last step above is very
+important)
 
    `sudo mount /dev/webdata-vg/logs-lv /mnt/logs`
+
+   * Restore log files back into /var/log directory
+
+   `sudo rsync -av /mnt/logs. /var/log`
+
+   ![rsync2](./images/rsync2.png)
 
 * Mount lv-opt on /mnt/opt – To be used by Jenkins server in one of our projects.
   
