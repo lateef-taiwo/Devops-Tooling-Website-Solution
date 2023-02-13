@@ -176,16 +176,16 @@ __________
 
 ![Mounts](./images/mnts.png)
 
-* Mount /mnt/apps on apps-lv logical volume
- 
-  `sudo mount /dev/webdata-vg/apps-lv /mnt/apps`
-
 * Mount lv-apps on /mnt/apps – To be used by webservers.
+
    `sudo mount /dev/webdata-vg/apps-lv /mnt/apps`
  
 * Mount lv-logs on /mnt/logs – To be used by webserver logs. 
 
-* Mount lv-opt on /mnt/opt – To be used by Jenkins server in one of our projects.
+   `sudo mount /dev/webdata-vg/logs-lv /mnt/logs`
 
+* Mount lv-opt on /mnt/opt – To be used by Jenkins server in one of our projects.
+  
+    `sudo mount /dev/webdata-vg/opt-lv /mnt/opt`
 
 
