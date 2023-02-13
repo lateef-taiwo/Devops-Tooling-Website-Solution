@@ -176,11 +176,12 @@ __________
 
 ![Mounts](./images/mnts.png)
 
-* Mount /var/www/html on apps-lv logical volume
+* Mount /mnt/apps on apps-lv logical volume
  
-  `sudo mount /dev/webdata-vg/apps-lv /var/www/html/`
+  `sudo mount /dev/webdata-vg/apps-lv /mnt/apps`
 
 * Mount lv-apps on /mnt/apps – To be used by webservers.
+   `sudo mount /dev/webdata-vg/apps-lv /mnt/apps`
  
 * Mount lv-logs on /mnt/logs – To be used by webserver logs. 
 
