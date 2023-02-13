@@ -201,4 +201,33 @@ important)
 
   ![Mounts](./images/mnts.png)
 
+* Update `/etc/fstab` file so that the mount configuration will persist after restart of the server. The UUID of the device will be used to update the /etc/fstab file;
 
+  `sudo blkid`
+
+  ![blkid](./images/blkid%20logs%20apps%20opt.png)
+
+* Now type `sudo vi /etc/fstab`
+
+  ![fstab](./images/vi%20etc-fstab.png)
+
+
+* Update /etc/fstab in this format using your own UUID as shown below.
+
+  ![fstab](./images/etc-fstab.png)
+
+* Test the configuration and reload the daemon
+ 
+   `sudo mount -a`
+   `sudo systemctl daemon-reload`
+
+   ![mount](./images/daemon-reload.png)
+ 
+* Verify your setup by running `df -h`, output must look like the one in the image below:
+
+  ![verify](./images/df%20-h.png)
+
+
+
+------
+________
