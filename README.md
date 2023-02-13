@@ -286,6 +286,11 @@ ________
 
 * Install MySQL server
 
+   `sudo yum install mysql-server`
+
+   ![myssql-server](./images/mysql-server.png)
+    ![myssql-server](./images/mysql-server2.png)
+
 * Create a database and name it tooling
 
 * Create a database user and name it webaccess
