@@ -243,7 +243,50 @@ important)
 
  ![ipv4 cidr](./images/subnet%20id.png)
  ![ipv4 cidr](./images/subnet%20ipv4%20CIDR.png)
- 
 
+* Ensure you set up permission that will allow Web servers to read, write and execute files on NFS:
+
+      sudo chown -R nobody: /mnt/apps
+      sudo chown -R nobody: /mnt/logs
+      sudo chown -R nobody: /mnt/opt
+        
+      sudo chmod -R 777 /mnt/apps
+      sudo chmod -R 777 /mnt/logs
+      sudo chmod -R 777 /mnt/opt
+        
+      sudo systemctl restart nfs-server.service
+
+  ![chmod chown](./images/chown%20chmod.png)
+
+* Export the mounts for webservers `subnet CIDR` to connect as clients.
+
+  `sudo vi /etc/exports`
+
+  ![exports](./images/vi%20exports.png)
+
+  `sudo exportfs -arv`
+
+  ![exports](./images/exportfs.png)
+
+* Check which port is used by NFS and open it using Security Groups (add new Inbound Rule)
+
+  ![rpcinfo](./images/rpcinfo.png)
+
+*  In order for NFS server to be accessible from your client, you must also open following ports: TCP 111, UDP 111, UDP 2049
+
+  ![sec groups](./images/Security%20groups.png)
+ 
 ------
 ________
+
+### STEP 2 - CONFIGURE THE DATABASE SERVER
+* Spin up a new EC2 instance with RHEL Linux 8 Operating System.
+
+* Install MySQL server
+
+* Create a database and name it tooling
+
+* Create a database user and name it webaccess
+
+* Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr
+
