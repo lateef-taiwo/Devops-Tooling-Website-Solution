@@ -6,7 +6,8 @@ This repostory explains the steps involved in building and deploying a 3-Tier We
 ----------
 __________
 ### STEP 1 - PREPARE NFS SERVER
-* Spin up a new EC2 instance with RHEL Linux 8 Operating System. Name it `nfs server`
+* Spin up a new EC2 instance with RHEL Linux 8 Operating System. Search for 
+ RHEL-8.2.0_HVM-20210907-x86_64-0-Hourly2-GP2 in the AWS Marketplace AMIs or Community AMIs. Name it `nfs server`
 
 ![EC2](./images/nfs%20server.png)
 
@@ -291,9 +292,36 @@ ________
    ![myssql-server](./images/mysql-server.png)
     ![myssql-server](./images/mysql-server2.png)
 
+* Verify that the service is up and running by using `sudo systemctl status mysqld`, if it is not running, restart the service and enable it so it will be running even after reboot:
+
+  `sudo systemctl restart mysqld`
+
+  `sudo systemctl enable mysqld`
+
+* Check the status of mysql service again.
+
+  `sudo systemctl status mysqld`  
+
+  ![mysql](./images/status%20mysqld.png)
+
 * Create a database and name it tooling
 
 * Create a database user and name it webaccess
 
-* Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr
+* Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr.
+
+ ![database](./images/dbserver%20settings.png)
+
+ --------
+ ________
+
+ ### STEP 3 - PREPARE WEB SERVERS
+During the next steps we will do following:
+* Configure NFS client (this step must be done on all three servers)
+* Deploy a Tooling application to our Web Servers into a shared NFS folder
+* Configure the Web Servers to work with a single MySQL database
+* Launch a new EC2 instance with RHEL 8 Operating System
+* Install NFS client
+  
+   `sudo yum install nfs-utils nfs4-acl-tools -y`
 
