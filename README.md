@@ -93,7 +93,7 @@ __________
 
  ![lvm2](./images/lvm2.png)
 
-  ![lvm2](./images/lvm.png)
+  ![lvm2](./images/lvm2b.png)
 
 * Type `sudo lvmdiskscan` command to check for available partitions.
 
@@ -118,17 +118,19 @@ __________
 
 * Verify that your VG has been created successfully by running `sudo vgs`
 
-![vgs](./images/vgs.png)
+![vgs](./images/vgcreate.png)
 
 * Use `lvcreate` utility to create 2 logical volumes. Name one apps-lv and use half of the PV size. Name the second one logs-lv and use the remaining space of the PV size. NOTE: apps-lv will be used to store data for the Website while, logs-lv will be used to store data for logs.
 
-    `sudo lvcreate -n apps-lv -L 14G webdata-vg`
+    `sudo lvcreate -n apps-lv -L 9.9G webdata-vg`
 
-    `sudo lvcreate -n logs-lv -L 14G webdata-vg`
+    `sudo lvcreate -n logs-lv -L 9.9G webdata-vg`
+
+    `sudo lvcreate -n opt-lv -L 9.9G webdata-vg`
 
 * Verify that your Logical Volume has been created successfully by typing `sudo lvs`
 
-![lvs](./images/lvs.png)
+![lvs](./images/lvcreate.png)
 
 * Verify the entire setup by typing the following commands
 
