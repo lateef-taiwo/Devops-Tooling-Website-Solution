@@ -128,9 +128,11 @@ __________
 
     `sudo lvcreate -n opt-lv -L 9.9G webdata-vg`
 
+   ![lvs](./images/lvcreate.png)
+
 * Verify that your Logical Volume has been created successfully by typing `sudo lvs`
 
-![lvs](./images/lvcreate.png)
+   ![lvs](./images/lvs.png)
 
 * Verify the entire setup by typing the following commands
 
@@ -138,14 +140,48 @@ __________
 
    `sudo lsblk`
 
-   ![verify](./images/verify.png)
+   ![verify](./images/vgdisplay.png)
 
-   ![verify](./images/verify%20partition.png)
+   ![verify](./images/lsblk3.png)
 
-   ![verify](./images/verify%20lsblk.png)
+* Use `mkfs.xfs` to format the logical volumes with ext4 filesystem
 
+    `sudo mkfs -t xfs /dev/webdata-vg/apps-lv`
 
-* Mount lv-apps on /mnt/apps – To be used by webservers. 
+    ![xfs](./images/xfs2.png)
+
+    `sudo mkfs -t xfs /dev/webdata-vg/logs-lv`
+
+    ![xfs](./images/xfs3.png)
+
+    `sudo mkfs -t xfs -f /dev/webdata-vg/opt-lv`
+
+    ![xfs](./images/xfs1.png)
+
+* Type `lsblk -f` to view partitions including the file system.
+ 
+    ![filesystem](./images/lsblk%20-f.png)
+
+ * Create /mnt/apps directory to store website files
+
+    `sudo mkdir -p /mnt/apps`
+
+* Create /mnt/logs to store backup of log data
+ 
+    `sudo mkdir -p /mnt/logs`
+
+* Create /mnt/opt to be used by jenkins server in the next project.
+ 
+    `sudo mkdir -p /mnt/opt`
+
+![Mounts](./images/mnts.png)
+
+* Mount /var/www/html on apps-lv logical volume
+ 
+  `sudo mount /dev/webdata-vg/apps-lv /var/www/html/`
+
+* Mount lv-apps on /mnt/apps – To be used by webservers.
+ 
 * Mount lv-logs on /mnt/logs – To be used by webserver logs. 
 
 * Mount lv-opt on /mnt/opt – To be used by Jenkins server in one of our projects.
