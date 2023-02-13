@@ -227,7 +227,23 @@ important)
 
   ![verify](./images/df%20-h.png)
 
+* Install NFS server, configure it to start on reboot and make sure it is u and running
 
+      sudo yum -y update
+      sudo yum install nfs-utils -y
+      sudo systemctl start nfs-server.service
+      sudo systemctl enable nfs-server.service
+      sudo systemctl status nfs-server.service
+
+  ![nfs](./images/nfs-utils.png)
+  ![nfs](./images/nfs-utils2.png)
+  ![nfs](./images/start%2C%20enable%20status%20nfs.png)
+
+* check your subnet cidr – open your EC2 details in the AWS web console and locate the ‘Networking’ tab and open a Subnet link:
+
+ ![ipv4 cidr](./images/subnet%20id.png)
+ ![ipv4 cidr](./images/subnet%20ipv4%20CIDR.png)
+ 
 
 ------
 ________
