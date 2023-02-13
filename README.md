@@ -280,7 +280,9 @@ important)
 ________
 
 ### STEP 2 - CONFIGURE THE DATABASE SERVER
-* Spin up a new EC2 instance with RHEL Linux 8 Operating System.
+* Spin up a new EC2 instance with RHEL Linux 8 Operating System. Name it database server.
+
+  ![db server](./images/databse%20server.png)
 
 * Install MySQL server
 
