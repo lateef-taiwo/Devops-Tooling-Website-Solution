@@ -11,7 +11,7 @@ __________
 
 ![EC2](./images/nfs%20server.png)
 
-* Based on your LVM experience from Project 6, Configure LVM on the Server.
+* Based on your LVM experience from [Wordpress solution using 3 Tier Architecture Project](https://github.com/lateef-taiwo/Deploy-Web-Solution-with-Wordpress-on-AWS), Configure LVM on the Server.
 
 * Instead of formatting the disks as ext4, you will have to format them as xfs.
 
@@ -324,4 +324,8 @@ During the next steps we will do following:
 * Install NFS client
   
    `sudo yum install nfs-utils nfs4-acl-tools -y`
+
+   ![nfs-client](./images/nfs%20client%202.png)
+
+   ![nfs-client](./images/nfs%20client.png)
 
