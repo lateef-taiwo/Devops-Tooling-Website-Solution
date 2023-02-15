@@ -392,3 +392,15 @@ During the next steps we will do following:
   ![fstab](./images/etc-fstab3.png)
 
 * Fork the tooling source code from [this repo](https://github.com/lateef-taiwo/DevOpsToolingWebsite) to your Github account.
+
+* Deploy the tooling website’s code to the Webserver. Ensure that the html folder from the repository is deployed to /var/www/html
+
+    ![git clone](./images/git%20clone.png)
+
+    ![html](./images/html.png)
+
+* Note 1: Do not forget to open TCP port 80 on the Web Server. 
+
+* Note 2: If you encounter 403 Error – check permissions to your /var/www/html folder and also disable SELinux `sudo setenforce 0` To make this change permanent – open following config file `sudo vi /etc/sysconfig/selinux` and set SELINUX=disabled then restart httpd by typing `sudo systemctl restart httpd`.
+
+   ![selinux](./images/selinx.png)
