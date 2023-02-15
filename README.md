@@ -404,3 +404,17 @@ During the next steps we will do following:
 * Note 2: If you encounter 403 Error – check permissions to your /var/www/html folder and also disable SELinux `sudo setenforce 0` To make this change permanent – open following config file `sudo vi /etc/sysconfig/selinux` and set SELINUX=disabled then restart httpd by typing `sudo systemctl restart httpd`.
 
    ![selinux](./images/selinx.png)
+
+* Update the website’s configuration to connect to the database (in /var/www/html/functions.php file). `sudo vi /var/www/html/functions.php`
+
+   ![db config](./images/db%20config.png)
+
+* Install mysql-client `sudo yum install mysql`
+
+*  Apply tooling-db.sql script to your database using this command mysql -h <databse-private-ip> -u <db-username> -p <db-pasword> < tooling-db.sql
+
+   ![db connect](./images/db%20connection.png)
+
+* Confirm if this worked in the DB-Server
+
+   ![db](./images/databases.png)
