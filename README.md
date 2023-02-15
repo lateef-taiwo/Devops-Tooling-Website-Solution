@@ -390,4 +390,5 @@ During the next steps we will do following:
   ![mounts](./images/mounts.png)
 
   ![fstab](./images/etc-fstab3.png)
-  
+
+* Fork the tooling source code from [this repo](https://github.com/lateef-taiwo/DevOpsToolingWebsite) to your Github account.
