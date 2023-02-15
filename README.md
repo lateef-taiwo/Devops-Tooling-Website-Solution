@@ -378,5 +378,6 @@ During the next steps we will do following:
   ![installations](./images/installations%202.png)
 
   ![systemctl](./images/systemctl2.png)
-  
+
+* Verify that Apache files and directories are available on the Web Server in /var/www and also on the NFS server in /mnt/apps. If you see the same files – it means NFS is mounted correctly. You can try to create a new file `touch test.md` from.
 
