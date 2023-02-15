@@ -371,7 +371,12 @@ During the next steps we will do following:
 
 * Repeat steps 1-6 for another 2 Web Servers.
 
-![df -h](./images/df%20-h3.png)
+  ![df -h](./images/df%20-h3.png)
 
-![etc-fstab](./images/etc-fstab2.png)
+  ![etc-fstab](./images/etc-fstab2.png)
+
+  ![installations](./images/installations%202.png)
+
+  ![systemctl](./images/systemctl2.png)
+  
 
