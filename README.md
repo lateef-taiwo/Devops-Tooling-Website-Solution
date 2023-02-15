@@ -384,4 +384,10 @@ During the next steps we will do following:
    ![test](./images/test1.png)
 
    ![test](./images/test%202.png)
-   
+
+* Locate the log folder for Apache on the Web Server and mount it to NFS server’s export for logs. Repeat step 5 above to make sure the mount point will persist after reboot.
+
+  ![mounts](./images/mounts.png)
+
+  ![fstab](./images/etc-fstab3.png)
+  
