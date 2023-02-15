@@ -365,4 +365,6 @@ During the next steps we will do following:
       
       setsebool -P httpd_execmem 1
 
+  ![installations](./images/installations.png)
 
+  ![systemctl](./images/systemctl.png)
