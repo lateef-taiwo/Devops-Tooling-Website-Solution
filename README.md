@@ -432,3 +432,10 @@ INSERT INTO ‘users’ (‘id’, ‘username’, ‘password’, ’email’, 
   ![login](./images/logged%20in.png)
 
   ![login](./images/logged%20in%202.png)
+
+-------------
+_____________
+
+### Congratulations! You have just implemented a web solution for a DevOps team using LAMP stack with remote Database and NFS servers.
+
+
