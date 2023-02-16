@@ -418,3 +418,17 @@ During the next steps we will do following:
 * Confirm if this worked in the DB-Server
 
    ![db](./images/databases.png)
+
+* Create in MySQL a new admin user with username: myuser and password: password:
+INSERT INTO ‘users’ (‘id’, ‘username’, ‘password’, ’email’, ‘user_type’, ‘status’) VALUES
+-> (1, ‘myuser’, ‘5f4dcc3b5aa765d61d8327deb882cf99’, ‘user@mail.com’, ‘admin’, ‘1’);
+
+  ![db](./images/db2.png)
+
+* Open the website in your browser `http://<Web-Server-Public-IP-Address-or-Public-DNS-Name>/index.php` and make sure you can login into the websute with `myuser` user.
+
+  ![login](./images/login%20page.png)
+
+  ![login](./images/logged%20in.png)
+
+  ![login](./images/logged%20in%202.png)
