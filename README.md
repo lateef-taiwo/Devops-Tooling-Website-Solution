@@ -76,7 +76,7 @@ __________
 
     * Type n to add a new partition. Press enter repeatedly to use the default values
 
-    * Type w to write partition changes to disk. T ype Y on prompt
+    * Type w to write partition changes to disk. Type Y on prompt
 
     ![gpt](./images/xvdf%20partition.png)
 
@@ -145,7 +145,7 @@ __________
 
    ![verify](./images/lsblk3.png)
 
-* Use `mkfs.xfs` to format the logical volumes with ext4 filesystem
+* Use `mkfs.xfs` to format the logical volumes with xfs filesystem
 
     `sudo mkfs -t xfs /dev/webdata-vg/apps-lv`
 
