@@ -240,7 +240,7 @@ important)
   ![nfs](./images/nfs-utils2.png)
   ![nfs](./images/start%2C%20enable%20status%20nfs.png)
 
-* check your subnet cidr – open your EC2 details in the AWS web console and locate the ‘Networking’ tab and open a Subnet link:
+* check your subnet cidr – open your EC2 details in the AWS web console and locate the ‘Networking’ tab and open the Subnet ID link:
 
  ![ipv4 cidr](./images/subnet%20id.png)
  ![ipv4 cidr](./images/subnet%20ipv4%20CIDR.png)
