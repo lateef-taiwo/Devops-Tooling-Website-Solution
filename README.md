@@ -17,7 +17,7 @@ __________
 
 * Ensure there are 3 Logical Volumes. lv-opt lv-apps, and lv-logs.
 
-* Create 3 volumes in the same AZ as your Web Server EC2, each of 10 GiB.
+* Create 3 volumes in the same AZ as your nfs Server EC2, each of 10 GiB.
 
     1.  On the left hand side of the aws console, under Elastic Blob Store, Click on `Volume`.
 
@@ -31,7 +31,7 @@ __________
 
     6.  Next, select the volume created, right click and click `Attach volume`.
 
-    7.  Select the web server instance created. I named my server `web server`. The device name will be `/dev/sdf` but newer Linux kernels may rename your devices to `/dev/xvdf` through /dev/xvdp internally, even when the device name entered is `/dev/sdf`
+    7.  Select the web server instance created. I named my server `nfs server`. The device name will be `/dev/sdf` but newer Linux kernels may rename your devices to `/dev/xvdf` through /dev/xvdp internally, even when the device name entered is `/dev/sdf`
     
     8.  Click Attach volume 
 
