@@ -306,6 +306,9 @@ ________
 
 * Create a database and name it tooling
 
+       sudo mysql
+       create database tooling;
+
 * Create a database user and name it webaccess
 
 * Grant permission to webaccess user on tooling database to do anything only from the webservers subnet cidr.
