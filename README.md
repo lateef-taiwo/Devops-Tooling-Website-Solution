@@ -281,7 +281,7 @@ important)
 ________
 
 ### STEP 2 - CONFIGURE THE DATABASE SERVER
-* Spin up a new EC2 instance with RHEL Linux 8 Operating System. Name it database server.
+* Spin up a new EC2 instance with Ubuntu 20.04. Name it database server.
 
   ![db server](./images/databse%20server.png)
 
@@ -294,13 +294,13 @@ ________
 
 * Verify that the service is up and running by using `sudo systemctl status mysqld`, if it is not running, restart the service and enable it so it will be running even after reboot:
 
-  `sudo systemctl restart mysqld`
+  `sudo systemctl restart mysql`
 
-  `sudo systemctl enable mysqld`
+  `sudo systemctl enable mysql`
 
 * Check the status of mysql service again.
 
-  `sudo systemctl status mysqld`  
+  `sudo systemctl status mysql`  
 
   ![mysql](./images/status%20mysqld.png)
 
